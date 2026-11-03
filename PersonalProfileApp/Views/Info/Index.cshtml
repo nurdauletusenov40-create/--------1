@@ -1,0 +1,50 @@
+﻿@model StudentProfile
+@{
+    ViewData["Title"] = "Басты бет";
+}
+
+<section class="hero-section">
+    <div class="container hero-content">
+        <div class="hero-copy">
+            <p class="eyebrow">ЖЕКЕ ПАРАҚША</p>
+            <h1>Сәлем, мен <span>@Model.FullName</span></h1>
+            <p class="hero-description">
+                Сәлем! Мен Үсенов Нұрдаулетпін. Абай атындағы Қазақ ұлттық педагогикалық университетінің
+                3-курс студентімін. Ақпараттық жүйелер бағытында білім алып, веб-бағдарламалау мен
+                заманауи IT технологияларын үйреніп жүрмін.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary btn-lg" asp-controller="Info" asp-action="About">Мен туралы <span aria-hidden="true">→</span></a>
+                <a class="btn btn-outline-light btn-lg" asp-controller="Info" asp-action="Portfolio">Портфолио</a>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="avatar-mark" aria-hidden="true">ҮН</div>
+            <p class="hero-card-name">@Model.FullName</p>
+            <p class="hero-card-major">@Model.Major</p>
+            <div class="hero-card-divider"></div>
+            <div class="hero-facts">
+                <div><span>Оқу жылы</span><strong>@Model.Course</strong></div>
+                <div><span>Тобы</span><strong>@Model.Group</strong></div>
+                <div><span>Қала</span><strong>@Model.City</strong></div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-decoration hero-decoration-one"></div>
+    <div class="hero-decoration hero-decoration-two"></div>
+</section>
+
+<section class="section-shell intro-section">
+    <div class="container">
+        <div class="intro-panel">
+            <div>
+                <p class="eyebrow">ҚЫСҚАША ТАНЫСТЫРУ</p>
+                <h2>Білім мен тәжірибе арқылы даму</h2>
+            </div>
+            <p>
+                Мен @Model.University университетінде білім алып жүрмін. Бағдарламалау негіздерін
+                меңгеріп, оқу барысында веб-жобалар мен практикалық тапсырмаларға қызығамын.
+            </p>
+        </div>
+    </div>
+</section>

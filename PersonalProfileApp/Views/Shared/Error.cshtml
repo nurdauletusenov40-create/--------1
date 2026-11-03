@@ -1,0 +1,17 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Қате";
+}
+
+<section class="section-shell">
+    <div class="container narrow-container">
+        <div class="content-panel">
+            <p class="eyebrow">ҚАТЕ</p>
+            <h1>Сұрауды өңдеу кезінде қате орын алды.</h1>
+            @if (Model.ShowRequestId)
+            {
+                <p>Сұрау нөмірі: <code>@Model.RequestId</code></p>
+            }
+        </div>
+    </div>
+</section>

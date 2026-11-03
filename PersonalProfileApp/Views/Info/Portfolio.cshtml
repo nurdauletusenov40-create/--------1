@@ -1,0 +1,39 @@
+﻿@model StudentProfile
+@{
+    ViewData["Title"] = "Портфолио";
+}
+
+<section class="page-heading">
+    <div class="container">
+        <p class="eyebrow">ОҚУ ЖҰМЫСТАРЫ</p>
+        <h1>Портфолио</h1>
+        <p>Оқу барысында танысып, орындап жүрген жобалар мен тапсырмалар.</p>
+    </div>
+</section>
+
+<section class="section-shell">
+    <div class="container">
+        <div class="row g-4">
+            @foreach (var project in Model.Projects)
+            {
+                <div class="col-md-6 col-xl-4">
+                    <article class="project-card h-100">
+                        <div class="project-number">@((Model.Projects.IndexOf(project) + 1).ToString("00"))</div>
+                        <h2>@project.Name</h2>
+                        <p class="project-description">@project.Description</p>
+                        <div class="project-technologies">
+                            @foreach (var technology in project.Technologies)
+                            {
+                                <span class="technology-chip">@technology</span>
+                            }
+                        </div>
+                    </article>
+                </div>
+            }
+        </div>
+        <div class="portfolio-note">
+            <span class="note-icon" aria-hidden="true">i</span>
+            <p>Жобалар оқу мақсатында берілген. Бұл парақшада расталмаған сілтемелер мен жетістіктер көрсетілмейді.</p>
+        </div>
+    </div>
+</section>

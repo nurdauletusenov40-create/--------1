@@ -1,0 +1,65 @@
+﻿@model StudentProfile
+@{
+    ViewData["Title"] = "Мен туралы";
+}
+
+<section class="page-heading">
+    <div class="container">
+        <p class="eyebrow">ТАНЫСЫП ҚОЙЫҢЫЗ</p>
+        <h1>Мен туралы</h1>
+        <p>Оқуым, бағытым және қызығушылықтарым туралы қысқаша ақпарат.</p>
+    </div>
+</section>
+
+<section class="section-shell">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="content-panel profile-panel h-100">
+                    <div class="profile-heading">
+                        <div class="avatar-mark avatar-mark-small" aria-hidden="true">ҮН</div>
+                        <div>
+                            <p class="eyebrow">СТУДЕНТ</p>
+                            <h2>@Model.FullName</h2>
+                        </div>
+                    </div>
+                    <dl class="profile-details">
+                        <div><dt>Университет</dt><dd>@Model.University</dd></div>
+                        <div><dt>Тобы</dt><dd>@Model.Group</dd></div>
+                        <div><dt>Курс</dt><dd>@Model.Course</dd></div>
+                        <div><dt>Қала</dt><dd>@Model.City</dd></div>
+                        <div><dt>Мамандығы</dt><dd>@Model.Major</dd></div>
+                        <div>
+                            <dt>Байланыс</dt>
+                            <dd>@(Model.ContactInformation ?? "Байланыс ақпараты әзірге көрсетілмеген.")</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="content-panel h-100">
+                    <p class="eyebrow">ТЕХНИКАЛЫҚ ДАҒДЫЛАР</p>
+                    <h2 class="panel-title">Қолданатын технологиялар</h2>
+                    <div class="skills-grid">
+                        @foreach (var skill in Model.Skills)
+                        {
+                            <div class="skill-card">
+                                <span class="skill-dot"></span>
+                                <span>@skill</span>
+                            </div>
+                        }
+                    </div>
+                    <div class="interests-block">
+                        <p class="eyebrow">ҚЫЗЫҒУШЫЛЫҚТАР</p>
+                        <div class="interest-list">
+                            @foreach (var interest in Model.Interests)
+                            {
+                                <span class="interest-chip">@interest</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

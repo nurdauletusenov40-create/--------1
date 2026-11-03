@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PersonalProfileApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <meta name="theme-color" content="#102a43" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark site-navbar">
+            <div class="container">
+                <a class="navbar-brand brand-mark" asp-controller="Info" asp-action="Index">
+                    <span class="brand-icon">N</span>
+                    <span>Жеке парақша</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation"
+                        aria-expanded="false" aria-label="Мәзірді ашу">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Info" asp-action="Index">Басты бет</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Info" asp-action="About">Мен туралы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Info" asp-action="Portfolio">Портфолио</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+            @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <span>© @DateTime.Now.Year Үсенов Нұрдаулет</span>
+            <span class="footer-project">PersonalProfileApp · Оқу жобасы</span>
+        </div>
+    </footer>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
