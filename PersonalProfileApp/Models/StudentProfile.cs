@@ -12,6 +12,7 @@ public class StudentProfile
     public List<string> Interests {  get; set; } = [];
     public string? ContactInformation { get; set; }
     public List<PortfolioProject> Projects { get; set; } = [];
+}
 
 
 public class PortfolioProject
