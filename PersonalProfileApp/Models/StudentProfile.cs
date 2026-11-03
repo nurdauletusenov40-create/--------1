@@ -9,10 +9,10 @@ public class StudentProfile
     public string City { get; set; } = string.Empty;
     public string Major { get; set; } = string.Empty;
     public List<string> Skills { get; set; } = [];
-    public List<string> Interests { get; set; } = [];
+    public List<string> Interests {  get; set; } = [];
     public string? ContactInformation { get; set; }
     public List<PortfolioProject> Projects { get; set; } = [];
-}
+
 
 public class PortfolioProject
 {
